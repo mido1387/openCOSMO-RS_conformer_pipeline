@@ -299,8 +299,8 @@ class ConformerGenerator(object):
             probe_mol = Chem.RemoveHs(probe_molecule, sanitize=sanitize)
             reference_mol = Chem.RemoveHs(reference_molecule, sanitize=sanitize)
         else:
-            probe_mol = Chem.Mol(probe_molecule, sanitize=sanitize)
-            reference_mol = Chem.Mol(reference_molecule, sanitize=sanitize)
+            probe_mol = Chem.Mol(probe_molecule)
+            reference_mol = Chem.Mol(reference_molecule)
 
         return rdMolAlign.GetBestRMS(
             probe_mol,
